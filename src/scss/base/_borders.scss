@@ -1,14 +1,18 @@
-/**
-
-  borders
------------------------
-
-  These are the utility classes for borders and border-radii.
-
-  b: border
-  bw: border-width
-
----------------------*/
+// Borders
+//
+// These are the utility classes for borders and border-radii.
+//
+// b: border
+// bw: border-width
+//
+// Markup: borders.html
+//
+// .b       - solid border on all four sides
+// .bt      - solid border on top
+// .br      - solid border on right
+// .bb      - solid border on bottom
+//
+// Styleguide Base - Borders
 
 .b {
   border-style: solid;
@@ -90,6 +94,6 @@
   border-radius: 50%;
 }
 
-.not-rounded { 
+.not-rounded {
   border-radius: 0px;
 }
