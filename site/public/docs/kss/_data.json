@@ -1,0 +1,47 @@
+{
+  "Borders":  {
+        "description": "<p>These are the utility classes for borders and border-radii.</p>\n<p>b: border\nbw: border-width</p>\n",
+        "deprecated": false,
+        "experimental": false,
+        "reference": "Base - Borders",
+        "depth": 2,
+        "weight": 0,
+        "referenceURI": "base-borders",
+        "markup": "<div class=\"{{modifier_class}}\">{{modifier_class}}</div>",
+        "modifiers": [
+            {
+                "name": ".b",
+                "description": "solid border on all four sides",
+                "className": "b"
+            },
+            {
+                "name": ".bt",
+                "description": "solid border on top",
+                "className": "bt"
+            },
+            {
+                "name": ".br",
+                "description": "solid border on right",
+                "className": "br"
+            },
+            {
+                "name": ".bb",
+                "description": "solid border on bottom",
+                "className": "bb"
+            }
+        ],
+        "parameters": []
+    },
+    "Colors": {
+        "description": "<p>These are the utility classes for borders and border-radii.</p>\n<p>generated from ./src/lib/_colors.json by gulp-json-sass</p>\n<p>$white: #ffffff;\n$blue: #186bb7;</p>\n",
+        "deprecated": false,
+        "experimental": false,
+        "reference": "Base - Colors",
+        "depth": 2,
+        "weight": 0,
+        "referenceURI": "base-colors",
+        "markup": " Markup:",
+        "modifiers": [],
+        "parameters": []
+    }
+}
