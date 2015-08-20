@@ -1,0 +1,24 @@
+{
+    "header": "Colors",
+    "description": "<p>These are the utility classes for borders and border-radii.</p>\n<p>generated from ./src/lib/_colors.json by gulp-json-sass</p>\n",
+    "deprecated": false,
+    "experimental": false,
+    "reference": "Base - Colors",
+    "depth": 2,
+    "weight": 0,
+    "referenceURI": "base-colors",
+    "markup": ".white { color: {{modifier_class}}; }\n.bg-white { background-color: {{modifier_class}}; }\n.bc-white { border-color: {{modifier_class}}; }",
+    "modifiers": [
+        {
+            "name": "$white",
+            "description": "#ffffff",
+            "className": "$white"
+        },
+        {
+            "name": "$blue",
+            "description": "#186bb7",
+            "className": "$blue"
+        }
+    ],
+    "parameters": []
+}
