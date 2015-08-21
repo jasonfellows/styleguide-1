@@ -4,10 +4,14 @@
 //
 // generated from ./src/lib/_colors.json by gulp-json-sass
 //
-//  Markup:
+// Markup: .white { color: {{modifier_class}}; }
+// .bg-white { background-color: {{modifier_class}}; }
+// .bc-white { border-color: {{modifier_class}}; }
 //
-// $white: #ffffff;
-// $blue: #186bb7;
+// white              - #ffffff
+// blue               - #186bb7
+// blue-secondary     - #4c9be6
+// blue-tertiary      - #0e3e6b
 //
 // Styleguide Base - Colors
 

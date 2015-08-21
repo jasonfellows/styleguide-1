@@ -2,7 +2,11 @@
 article.mb3
   h1= obj.header
   != obj.description
-  p= obj.reference
-  p= obj.referenceURI
-  != obj.markup
-    
+  each border in obj.modifiers
+    - var borderClassname = border.className;
+    - var borderClass = border.name;
+    - var borderDesc = border.description;
+    div.col-2
+      div.m3.p2.bg-blue-pastel(class=borderClassname) 
+        code #{borderClass}
+        p #{borderDesc}

@@ -28,6 +28,26 @@
             "name": ".bb",
             "description": "solid border on bottom",
             "className": "bb"
+        },
+        {
+            "name": ".bl",
+            "description": "solid border on left",
+            "className": "bl"
+        },
+        {
+            "name": ".bd",
+            "description": "dotted border on all four sides",
+            "className": "bd"
+        },
+        {
+            "name": ".btd",
+            "description": "dotted border on top",
+            "className": "btd"
+        },
+        {
+            "name": ".brd",
+            "description": "dotted border on right",
+            "className": "brd"
         }
     ],
     "parameters": []

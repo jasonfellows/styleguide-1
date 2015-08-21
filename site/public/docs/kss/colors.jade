@@ -5,3 +5,17 @@
     p= obj.reference
     p= obj.referenceURI
     != obj.markup
+    each color in obj.modifiers
+      - var colorName = color.className;
+      div.flex.flex-center.flex-justify.mb2
+        div.col-1(class="bg-" + colorName)= "\u00a0"
+        div.col-1(class=colorName) #{colorName}
+        div.col-1.b.bw-1(class="bc-" + colorName)= "\u00a0"
+        div.col-2
+          code.language-css .bg-#{colorName}
+        div.col-2
+          code.language-css .#{colorName}
+        div.col-2
+          code.language-css .bc-#{colorName}
+          
+        

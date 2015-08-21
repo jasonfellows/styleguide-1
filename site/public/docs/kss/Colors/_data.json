@@ -10,14 +10,24 @@
     "markup": ".white { color: {{modifier_class}}; }\n.bg-white { background-color: {{modifier_class}}; }\n.bc-white { border-color: {{modifier_class}}; }",
     "modifiers": [
         {
-            "name": "$white",
+            "name": "white",
             "description": "#ffffff",
-            "className": "$white"
+            "className": "white"
         },
         {
-            "name": "$blue",
+            "name": "blue",
             "description": "#186bb7",
-            "className": "$blue"
+            "className": "blue"
+        },
+        {
+            "name": "blue-secondary",
+            "description": "#4c9be6",
+            "className": "blue-secondary"
+        },
+        {
+            "name": "blue-tertiary",
+            "description": "#0e3e6b",
+            "className": "blue-tertiary"
         }
     ],
     "parameters": []
