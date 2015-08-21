@@ -73,6 +73,7 @@ gulp.task('styles', function(){
   .pipe(minifyCSS({processImport: false}))
   .pipe(autoprefix())
   .pipe(gulp.dest('./public'))
+  .pipe(gulp.dest('./site/public/css'))//for Harp styleguide
   .pipe(connect.reload());
 });
 
