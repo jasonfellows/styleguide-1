@@ -1,34 +1,158 @@
 {
     "header": "Colors",
-    "description": "<p>These are the utility classes for borders and border-radii.</p>\n<p>generated from ./src/lib/_colors.json by gulp-json-sass</p>\n",
+    "description": "<p>(Styles &amp; KSS comments auto-generated from ./src/lib/_colors.json by gulp-json-sass. See Gulpfile.js)</p>\n",
     "deprecated": false,
     "experimental": false,
     "reference": "Base - Colors",
     "depth": 2,
     "weight": 0,
     "referenceURI": "base-colors",
-    "markup": ".white { color: {{modifier_class}}; }\n.bg-white { background-color: {{modifier_class}}; }\n.bc-white { border-color: {{modifier_class}}; }",
-    "modifiers": [
+    "markup": false,
+    "modifiers": [],
+    "parameters": [
         {
             "name": "white",
-            "description": "#ffffff",
-            "className": "white"
+            "description": "#ffffff"
         },
         {
             "name": "blue",
-            "description": "#186bb7",
-            "className": "blue"
+            "description": "#186bb7"
         },
         {
             "name": "blue-secondary",
-            "description": "#4c9be6",
-            "className": "blue-secondary"
+            "description": "#4c9be6"
         },
         {
             "name": "blue-tertiary",
-            "description": "#0e3e6b",
-            "className": "blue-tertiary"
+            "description": "#0e3e6b"
+        },
+        {
+            "name": "blue-baby",
+            "description": "#a1d2ff"
+        },
+        {
+            "name": "blue-light",
+            "description": "#eaf5ff"
+        },
+        {
+            "name": "blue-pastel",
+            "description": "#c9e1f7"
+        },
+        {
+            "name": "orange",
+            "description": "#e05b18"
+        },
+        {
+            "name": "orange-pastel",
+            "description": "#f5c3aa"
+        },
+        {
+            "name": "orange-shade",
+            "description": "#b85828"
+        },
+        {
+            "name": "orange-dark",
+            "description": "#87411d"
+        },
+        {
+            "name": "yellow",
+            "description": "#fdb836"
+        },
+        {
+            "name": "yellow-pastel",
+            "description": "#fee5b7"
+        },
+        {
+            "name": "yellow-shade",
+            "description": "#d2a043"
+        },
+        {
+            "name": "yellow-dark",
+            "description": "#9b7531"
+        },
+        {
+            "name": "green",
+            "description": "#52ac00"
+        },
+        {
+            "name": "green-pastel",
+            "description": "#c0e1a3"
+        },
+        {
+            "name": "green-shade",
+            "description": "#4a8b0f"
+        },
+        {
+            "name": "green-dark",
+            "description": "#36660a"
+        },
+        {
+            "name": "teal",
+            "description": "#00c2cb"
+        },
+        {
+            "name": "teal-pastel",
+            "description": "#a3e9ed"
+        },
+        {
+            "name": "teal-shade",
+            "description": "#129ea5"
+        },
+        {
+            "name": "teal-dark",
+            "description": "#0c7379"
+        },
+        {
+            "name": "purple",
+            "description": "#9846af"
+        },
+        {
+            "name": "purple-pastel",
+            "description": "#dec2e5"
+        },
+        {
+            "name": "purple-shade",
+            "description": "#6f3b7e"
+        },
+        {
+            "name": "purple-dark",
+            "description": "#582e63"
+        },
+        {
+            "name": "grey-3",
+            "description": "#f9f9f9"
+        },
+        {
+            "name": "grey-5",
+            "description": "#f3f3f4"
+        },
+        {
+            "name": "grey-10",
+            "description": "#e7e8ea"
+        },
+        {
+            "name": "grey-15",
+            "description": "#dcdee0"
+        },
+        {
+            "name": "grey-25",
+            "description": "#c4c7ca"
+        },
+        {
+            "name": "grey-50",
+            "description": "#899096"
+        },
+        {
+            "name": "grey-75",
+            "description": "#4f5962"
+        },
+        {
+            "name": "grey-90",
+            "description": "#2b3742"
+        },
+        {
+            "name": "grey-95",
+            "description": "#14212d"
         }
-    ],
-    "parameters": []
+    ]
 }

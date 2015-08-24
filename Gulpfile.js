@@ -16,6 +16,7 @@ var gutil = require('gulp-util');
 var iconfont = require('gulp-iconfont');
 var iconfontCss = require('gulp-iconfont-css');
 var fontName = 'icons';
+var fs = require('fs');
 
 function string_src(filename, string) {
   var src = require('stream').Readable({ objectMode: true })
@@ -87,10 +88,37 @@ gulp.task('scss-lint', function(){
 
 gulp.task('colors', function(){
   var source = './src/lib/_colors.json';
-  var banner = "// generated from <%= source %> by gulp-json-sass\n\n";
+  var createBanner = function() {
+    var colors = require(source);
+    var banner = [
+      '// Colors',
+      '//',
+      '// (Styles & KSS comments auto-generated from <%= source %> by gulp-json-sass. See Gulpfile.js)',
+      '//',
+    ];
+    // compile description for each color
+    for (mainColor in colors) {
+      for (subColor in colors[mainColor]) {
+        if (subColor == '') {// do not add an extra dash after main color name
+          var desc = '// ' + mainColor + subColor + ' - ' + colors[mainColor][subColor];
+          banner.push(desc);
+        } else {
+          var desc = '// ' + mainColor + '-' + subColor + ' - ' + colors[mainColor][subColor];
+          banner.push(desc);
+        }
+      }
+    }
+    var bannerFooter = [
+      '//',
+      '// Styleguide Base - Colors',
+      '\n'
+    ].join('\n');
+    banner.push(bannerFooter);
+    return banner.join('\n');
+  }
   gulp.src(source)
   .pipe(jsonSass())
-  .pipe(header(banner, {source: source}))
+  .pipe(header(createBanner(), {source: source}))
   .pipe(gulp.dest('./src/scss/base/'));
 });
 
@@ -110,6 +138,7 @@ gulp.task('watch', function(){
   gulp.watch('src/lib/icons/**', ['icons']);
   gulp.watch('src/lib/scss/_icons-template.scss', ['icons']);
   gulp.watch('src/lib/_colors.json', ['colors']);
+  gulp.watch('Gulpfile.js', ['colors']);
   gulp.watch('src/scss/**', ['scss-lint', 'styles']);
   gulp.watch('src/js/**', ['scripts']);
 });
