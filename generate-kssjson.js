@@ -1,4 +1,4 @@
-console.log ('* Running test-kss.js');
+console.log ('* Generating JSON from KSS...');
 
 var kss = require('kss');
 var fs = require('fs');//filesystem api
