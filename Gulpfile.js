@@ -16,7 +16,9 @@ var gutil = require('gulp-util');
 var iconfont = require('gulp-iconfont');
 var iconfontCss = require('gulp-iconfont-css');
 var fontName = 'icons';
+var kss = require('kss');
 var fs = require('fs');
+var dir = require('node-dir');
 
 function string_src(filename, string) {
   var src = require('stream').Readable({ objectMode: true })
@@ -122,23 +124,14 @@ gulp.task('colors', function(){
   .pipe(gulp.dest('./src/scss/base/'));
 });
 
-gulp.task('generate-kssjson'), function() {
-  console.log ('* Generating JSON from KSS...');
-
-  var kss = require('kss');
-  var fs = require('fs');//filesystem api
-
+gulp.task('kssjson', function() {
   kss.traverse('./src/scss/', {}, function(err, styleguide) {
     if (err) throw err;
-    console.log ('* Success! Saving each section to a separate JSON file...');
-
     var sections = JSON.parse(JSON.stringify(styleguide.data.sections));
-
     var writeFile = function(dirName, err) {
       if (err) throw err;
       fs.writeFile('./site/public/docs/kss/'+dirName+'/_data.json', JSON.stringify(obj,null,4), function(err){
         if (err) throw err;
-        console.log ('* Data saved!');
       });
     };
 
@@ -154,7 +147,7 @@ gulp.task('generate-kssjson'), function() {
     };
 
   });
-}
+});
 
 gulp.task('server', ['icons', 'colors', 'import-styles', 'styles', 'scripts'], function(){
   connect.server({
@@ -171,8 +164,8 @@ gulp.task('server', ['icons', 'colors', 'import-styles', 'styles', 'scripts'], f
 gulp.task('watch', function(){
   gulp.watch('src/lib/icons/**', ['icons']);
   gulp.watch('src/lib/scss/_icons-template.scss', ['icons']);
-  gulp.watch('src/lib/_colors.json', ['colors','generate-kssjson']);
-  gulp.watch('src/scss/**', ['scss-lint','styles','generate-kssjson']);
+  gulp.watch('src/lib/_colors.json', ['colors','kssjson']);
+  gulp.watch('src/scss/**', ['scss-lint','styles','kssjson']);
   gulp.watch('src/js/**', ['scripts']);
 });
 
