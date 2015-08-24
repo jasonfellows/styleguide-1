@@ -122,6 +122,40 @@ gulp.task('colors', function(){
   .pipe(gulp.dest('./src/scss/base/'));
 });
 
+gulp.task('generate-kssjson'), function() {
+  console.log ('* Generating JSON from KSS...');
+
+  var kss = require('kss');
+  var fs = require('fs');//filesystem api
+
+  kss.traverse('./src/scss/', {}, function(err, styleguide) {
+    if (err) throw err;
+    console.log ('* Success! Saving each section to a separate JSON file...');
+
+    var sections = JSON.parse(JSON.stringify(styleguide.data.sections));
+
+    var writeFile = function(dirName, err) {
+      if (err) throw err;
+      fs.writeFile('./site/public/docs/kss/'+dirName+'/_data.json', JSON.stringify(obj,null,4), function(err){
+        if (err) throw err;
+        console.log ('* Data saved!');
+      });
+    };
+
+    for(var i=0;i<sections.length;i++) {
+      var obj = sections[i];
+      var dirName = obj.header;
+      var path = './site/public/docs/kss/'+dirName;
+      if (!fs.existsSync(path)) {
+          fs.mkdir(path, writeFile(dirName, err));
+      } else {
+        writeFile(dirName, err);
+      }
+    };
+
+  });
+}
+
 gulp.task('server', ['icons', 'colors', 'import-styles', 'styles', 'scripts'], function(){
   connect.server({
     root: ['public'],
@@ -137,9 +171,8 @@ gulp.task('server', ['icons', 'colors', 'import-styles', 'styles', 'scripts'], f
 gulp.task('watch', function(){
   gulp.watch('src/lib/icons/**', ['icons']);
   gulp.watch('src/lib/scss/_icons-template.scss', ['icons']);
-  gulp.watch('src/lib/_colors.json', ['colors']);
-  gulp.watch('Gulpfile.js', ['colors']);
-  gulp.watch('src/scss/**', ['scss-lint', 'styles']);
+  gulp.watch('src/lib/_colors.json', ['colors','generate-kssjson']);
+  gulp.watch('src/scss/**', ['scss-lint','styles','generate-kssjson']);
   gulp.watch('src/js/**', ['scripts']);
 });
 
