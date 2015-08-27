@@ -18,7 +18,7 @@ var iconfontCss = require('gulp-iconfont-css');
 var fontName = 'icons';
 var kss = require('kss');
 var fs = require('fs');
-var dir = require('node-dir');
+var mkdirp = require('mkdirp');
 
 function string_src(filename, string) {
   var src = require('stream').Readable({ objectMode: true })
@@ -128,23 +128,16 @@ gulp.task('kssjson', function() {
   kss.traverse('./src/scss/', {}, function(err, styleguide) {
     if (err) throw err;
     var sections = JSON.parse(JSON.stringify(styleguide.data.sections));
-    var writeFile = function(dirName, err) {
-      if (err) throw err;
-      fs.writeFile('./site/public/docs/kss/'+dirName+'/_data.json', JSON.stringify(obj,null,4), function(err){
-        if (err) throw err;
-      });
-    };
 
     for(var i=0;i<sections.length;i++) {
       var obj = sections[i];
       var dirName = obj.header;
       var path = './site/public/docs/kss/'+dirName;
-      if (!fs.existsSync(path)) {
-          fs.mkdir(path, writeFile(dirName, err));
-      } else {
-        writeFile(dirName, err);
-      }
-    };
+      mkdirp(path, function(err) { if (err) throw err; });
+      fs.writeFile(path+'/_data.json',
+        JSON.stringify(obj,null,4, function(err) { if (err) throw err; })
+      );
+    }
 
   });
 });
