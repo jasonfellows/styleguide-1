@@ -1,21 +1,22 @@
-var gulp = require('gulp');
-var source = require('vinyl-source-stream');
-var sourcemaps = require('gulp-sourcemaps');
-var browserify = require('browserify');
-var babelify = require('babelify');
-var sass = require('gulp-sass');
 var autoprefix = require('gulp-autoprefixer');
-var scsslint = require('gulp-scss-lint');
-var minifyCSS = require('gulp-minify-css');
+var babelify = require('babelify');
+var browserify = require('browserify');
 var connect = require('gulp-connect');
-var history = require('connect-history-api-fallback');
-var jsonSass = require('gulp-json-sass');
-var header = require('gulp-header');
-var stringifyObject = require('stringify-object');
+var eslint = require('gulp-eslint');
+var fontName = 'icons';
+var gulp = require('gulp');
 var gutil = require('gulp-util');
+var header = require('gulp-header');
+var history = require('connect-history-api-fallback');
 var iconfont = require('gulp-iconfont');
 var iconfontCss = require('gulp-iconfont-css');
-var fontName = 'icons';
+var jsonSass = require('gulp-json-sass');
+var minifyCSS = require('gulp-minify-css');
+var sass = require('gulp-sass');
+var scsslint = require('gulp-scss-lint');
+var source = require('vinyl-source-stream');
+var sourcemaps = require('gulp-sourcemaps');
+var stringifyObject = require('stringify-object');
 
 function string_src(filename, string) {
   var src = require('stream').Readable({ objectMode: true })
@@ -38,6 +39,13 @@ gulp.task('scripts', function(){
   .pipe(source('app.js'))
   .pipe(gulp.dest('./public'))
   .pipe(connect.reload());
+});
+
+gulp.task('es-lint', function () {
+  return gulp.src(['./src/js/**/*.js'])
+    .pipe(eslint())
+    .pipe(eslint.format())
+    .pipe(eslint.failOnError());
 });
 
 gulp.task('icons', function(){
@@ -112,7 +120,7 @@ gulp.task('watch', function(){
   gulp.watch('src/lib/scss/_icons-template.scss', ['icons']);
   gulp.watch('src/lib/_colors.json', ['colors']);
   gulp.watch('src/scss/**', ['scss-lint', 'styles']);
-  gulp.watch('src/js/**', ['scripts']);
+  gulp.watch('src/js/**', ['es-lint', 'scripts']);
 });
 
 gulp.task('package:css', ['icons', 'colors'], function(){
