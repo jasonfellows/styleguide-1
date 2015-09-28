@@ -52,7 +52,7 @@ export default createClass({
   render() {
     if (this.state.previewing) {
       return (
-        <div className="bg-grey-5 grey-75 px2 py1 inline-block rounded-2">
+        <div className="bg-grey-05 grey-75 px2 py1 inline-block rounded-2">
           <div className="flex flex-center">
             <span className="small mb0">{this.state.fileName}</span>
             <span className="inline-block icon-delete blue-50 small mb0 ml2" onClick={this.handleRemove}></span>
