@@ -6,10 +6,10 @@ export default React.createClass({
 
   render() {
     return (
-      <Styleguide title="Navigation tyles">
+      <Styleguide title="Navigation Styles">
         <div title="Navigation Styles" description="The navigation styles..."></div>
       </Styleguide>
-      );
+    );
   }
 });
 

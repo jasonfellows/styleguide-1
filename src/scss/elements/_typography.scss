@@ -49,10 +49,12 @@ h4, .h4 { font-size: $h4; }
 h5, .h5 { font-size: $h5; }
 h6, .h6 { font-size: $h6; }
 
-.bold    { font-weight: bold; }
-.regular { font-weight: normal; }
-.italic  { font-style: italic; }
-.caps    { text-transform: uppercase; }
+.bold     { font-weight: $font-bold; }
+.semibold { font-weight: $font-semibold; }
+.regular  { font-weight: $font-regular; }
+.light    { font-weight: $font-light; }
+.italic   { font-style: italic; }
+.caps     { text-transform: uppercase; }
 
 .left-align   { text-align: left; }
 .center       { text-align: center; }

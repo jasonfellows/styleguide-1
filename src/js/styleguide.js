@@ -15,9 +15,8 @@ export default React.createClass({
         <li className="py1 blue">
           <a href={"#" + title}>{child.props.title}</a>
         </li>
-        )
+      );
     });
-
   },
 
   renderExample() {
@@ -30,9 +29,8 @@ export default React.createClass({
             </code>
           </pre>
         </div>
-        );
+      );
     }
-
   },
 
   listComponents() {
@@ -52,8 +50,7 @@ export default React.createClass({
             {this.renderExample()}
           </div>
         </div>
-        );
-
+      );
     });
   },
 
@@ -61,12 +58,12 @@ export default React.createClass({
 
     return (
       <div className="styleguide flex tall">
-        <div className="styleguide-sidebar col-2 py5 px3 br bw-1 bc-grey-15">
-          <div className="styleguide-sidebar-title grey-15 py2">{this.props.title}</div>
+        <div className="styleguide-sidebar col-2 py5 px3 br bw-1 bc-grey-10  bg-grey-3">
+          <div className="styleguide-sidebar-title grey-25 py2 caps">{this.props.title}</div>
           <div className="styleguide-sidebar-list list-reset">{this.listComponentTitles()}</div>
         </div>
         <div id="styleguide-components" className="styleguide-components col-10 flex-auto overflow-scroll p4">{this.listComponents()}</div>
       </div>
-      )
+    );
   }
 });
