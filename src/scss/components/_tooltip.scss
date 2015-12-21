@@ -1,0 +1,66 @@
+.tooltip {
+
+  &.top-left .triangle-top {
+    left: $space-4;
+    top: -$space-2;
+  }
+
+  &.top-center .triangle-top {
+    left: 50%;
+    margin-left: -$space-2;
+    top: -$space-2;
+  }
+
+  &.top-right .triangle-top {
+    right: $space-4;
+    top: -$space-2;
+  }
+
+  &.right-top .triangle-right {
+    right: -$space-2;
+    top: $space-4;
+  }
+
+  &.right-center .triangle-right {
+    margin-top: -$space-2;
+    right: -$space-2;
+    top: 50%;
+  }
+
+  &.right-bottom .triangle-right {
+    bottom: $space-4;
+    right: -$space-2;
+  }
+
+  &.bottom-right .triangle-bottom {
+    bottom: -$space-2;
+    right: $space-4;
+  }
+
+  &.bottom-center .triangle-bottom {
+    bottom: -$space-2;
+    left: 50%;
+    margin-left: -$space-2;
+  }
+
+  &.bottom-left .triangle-bottom {
+    bottom: -$space-2;
+    left: $space-4;
+  }
+
+  &.left-bottom .triangle-left {
+    bottom: $space-4;
+    left: -$space-2;
+  }
+
+  &.left-center .triangle-left {
+    left: -$space-2;
+    margin-top: -$space-2;
+    top: 50%;
+  }
+
+  &.left-top .triangle-left {
+    left: -$space-2;
+    top: $space-4;
+  }
+}

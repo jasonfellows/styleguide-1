@@ -1,9 +1,11 @@
 import React from 'react';
 import _ from 'underscore';
+import Overlay from '../../../overlays/overlay-click';
 
 const Type = React.PropTypes;
 
 export default React.createClass({
+
   displayName: "SimpleSelect",
 
   propTypes: {

@@ -8,31 +8,33 @@
 
 *************************/
 
+$triangle-size: $space-2;
+
 .triangle-bottom {
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 10px solid;
+  border-left: $triangle-size solid transparent;
+  border-right: $triangle-size solid transparent;
+  border-top: $triangle-size solid;
   border-top-color: inherit;
 }
 
 .triangle-left {
-  border-bottom: 10px solid transparent;
-  border-right: 10px solid;
+  border-bottom: $triangle-size solid transparent;
+  border-right: $triangle-size solid;
   border-right-color: inherit;
-  border-top: 10px solid transparent;
+  border-top: $triangle-size solid transparent;
 }
 
 .triangle-right {
-  border-bottom: 10px solid transparent;
-  border-left: 10px solid;
+  border-bottom: $triangle-size solid transparent;
+  border-left: $triangle-size solid;
   border-left-color: inherit;
-  border-top: 10px solid transparent;
+  border-top: $triangle-size solid transparent;
 }
 
 .triangle-top {
-  border-bottom: 10px solid;
+  border-bottom: $triangle-size solid;
   border-bottom-color: inherit;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
+  border-left: $triangle-size solid transparent;
+  border-right: $triangle-size solid transparent;
 }
 

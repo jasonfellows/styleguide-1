@@ -67,7 +67,7 @@ export default React.createClass({
 
   nextIcon() {
     if (this.showNext()) {
-      return <div className="icon-chevron-right absolute top-0 blue-50"
+      return <div className="icon-chevron-right absolute top-0 blue-50 pointer"
                   onClick={this.goToNextMonth}></div>
     } else {
       return '';
@@ -76,7 +76,7 @@ export default React.createClass({
 
   prevIcon() {
     if (this.showPrev()) {
-      return <div className="icon-chevron-left absolute top-0 blue-50"
+      return <div className="icon-chevron-left absolute top-0 blue-50 pointer"
                   onClick={this.goToPrevMonth}></div>
     } else {
       return '';

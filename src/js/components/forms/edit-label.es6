@@ -3,7 +3,7 @@ import Icon from '../misc/icon';
 import Popup from '../overlays/popup';
 import FieldErrors from './field-errors';
 import Colors from '../../../lib/_colors.json';
-import ClickOutside from '../overlays/click-outside';
+import OverlayClick from '../overlays/overlay-click';
 
 const {
   createClass,
@@ -134,7 +134,7 @@ export default createClass({
       };
 
       return (
-        <ClickOutside onClickOutside={this.handleOutsideClick}>
+        <OverlayClick onClick={this.handleOutsideClick}>
           <div className="flex flex-center flex-wrap" ref="wrapper">
             <textarea
               className={this._getTextClasses()}
@@ -166,7 +166,7 @@ export default createClass({
             </Popup>
             {this.state.hasErrors ? this._showError() : void 0}
           </div>
-        </ClickOutside>
+        </OverlayClick>
       );
     } else {
       return (

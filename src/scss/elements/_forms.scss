@@ -296,12 +296,13 @@ label {
 // but I thought that might be ok since these are UI elements
 
 .number-field {
+
   .icon {
+    font-size: 14px;
     height: 0;
-    margin-left: -23px;
+    margin-left: -20px;
     pointer-events: none;
     position: relative;
-    top: 3px;
     width: 0;
   }
 

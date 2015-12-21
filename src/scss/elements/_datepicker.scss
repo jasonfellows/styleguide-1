@@ -9,26 +9,8 @@
 
 $day-width: $space-4;
 
-.date-field {
-  width: $day-width * 7;
-
-  .icon-calendar {
-    right: $space-2;
-    top: 12%;
-  }
-
-  &.with-label .datepicker {
-    top: $space-1;
-
-    .monthpicker {
-      margin-top: $space-1 * 13;
-    }
-  }
-}
-
 .datepicker {
-  left: -$space-2;
-  top: 0;
+  width: $day-width * 7;
 
   @for $i from 0 through 6 {
     .day-in-week-#{$i} { left: $day-width * $i; }
@@ -40,7 +22,7 @@ $day-width: $space-4;
 }
 
 .monthpicker {
-  margin-top: $space-1 * 10;
+  margin-top: $space-1;
 
   .icon-chevron-left {
     left: $space-4;

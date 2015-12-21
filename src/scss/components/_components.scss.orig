@@ -17,6 +17,8 @@
 
 @import 'accordions';
 
-@import 'tooltip';
-
+<<<<<<< HEAD
 @import 'lists/lists';
+=======
+@import 'tooltip';
+>>>>>>> e5cbf2563b6399de422bc29f0550f9dd74b0b56d

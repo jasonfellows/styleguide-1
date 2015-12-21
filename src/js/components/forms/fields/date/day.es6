@@ -28,15 +28,14 @@ export default React.createClass({
                     "day-in-week-" + this.props.date.weekday(),
                     "week-" + this.props.week ];
 
-    if (this.props.selected) classes.push('bc-blue-50 bg-grey-95 bw-1 b white');
-    else if (this.props.disabled) classes.push('disabled grey-75 cursor-n');
-    else classes.push('grey-25');
+    if (this.props.selected) classes.push('bc-blue-50 bg-grey-95 bw-1 b white pointer');
+    else if (this.props.disabled) classes.push('disabled grey-75');
+    else classes.push('grey-25 pointer');
 
     return classes.join(' ');
   },
 
   handleClick(e) {
-    e.preventDefault();
     if (!this.props.disabled) this.props.onChangeDate(this.props.date);
   },
 
