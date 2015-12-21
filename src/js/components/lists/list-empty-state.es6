@@ -21,7 +21,7 @@ export default React.createClass({
 
   render() {
     return (
-      <div className='center bw-1 bb bc-grey-25 empty-state py5'>
+      <div className='list-empty-state center bw-1 bb bc-grey-25 py5'>
         <svg viewBox="-297 387 16.7 20" x="0px" y="0px" height="60px" width="60px" fill="#c4c7ca">
           <path d="M-280.3,392l-5-5H-297v20h16.7V392z M-282.1,392h-3.2v-3.2L-282.1,392z M-295.8,388.2h9.2v5h5v12.5h-14.2V388.2z" />
         </svg>
