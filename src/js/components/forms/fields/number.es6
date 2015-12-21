@@ -4,7 +4,7 @@ const Type = React.PropTypes;
 
 export default React.createClass({
 
-  displayName: "FieldNumber",
+  displayName: "NumberField",
 
   propTypes: {
     disabled: Type.bool,

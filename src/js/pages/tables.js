@@ -12,7 +12,7 @@ export default React.createClass({
 
           <h3 className="mb0">Basic Tables</h3>
 
-          <table className="mb4">
+          <table className="mb5">
             <thead>
               <tr className="secondary">
                 <th></th>
@@ -50,7 +50,7 @@ export default React.createClass({
           </table>
 
           <h3 className="mb0">Sortable Tables</h3>
-          <table>
+          <table className="mb5">
             <thead>
               <tr>
                 <th><a href="#" className="block">First</a></th>
