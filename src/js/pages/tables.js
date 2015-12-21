@@ -78,7 +78,7 @@ export default React.createClass({
           </table>
 
           <h3 className="mb0">Empty State</h3>
-          <table className="mb4">
+          <table>
             <thead>
               <tr>
                 <th>Name</th>
@@ -87,16 +87,10 @@ export default React.createClass({
                 <th>Header</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <ListEmptyState buttonLabel="Add The Thing"
-                                  buttonLink="#"
-                                  message="You don't have any of these things!" />
-                </td>
-              </tr>
-            </tbody>
           </table>
+          <ListEmptyState buttonLabel="Add The Thing"
+                          buttonLink="#"
+                          message="You don't have any of these things!" />
         </div>
       </Styleguide>
     );
