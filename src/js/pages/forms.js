@@ -6,6 +6,7 @@ import NumberField from '../components/forms/fields/number';
 import Radio from '../components/forms/fields/radio';
 import React from 'react';
 import DateField from '../components/forms/fields/date/date';
+import FieldSet from '../components/forms/field-set';
 import Select from 'react-select';
 import SelectField from '../components/forms/fields/select/select';
 import Styleguide from '../styleguide';
@@ -121,7 +122,7 @@ export default React.createClass({
             <Radio name="radios2" fieldColor='light' label="Radio" disabled={true} extraClasses={['py2']} />
 
             <p className="mt4">Fields within grey block</p>
-            <div className="bg-grey-10 p3 rounded-3">
+            <FieldSet>
               <p>Default fields</p>
               <TextField label="Text" fieldColor='dark' placeholder="Placeholder" extraClasses={['py2']}/>
               <NumberField label="Number" fieldColor='dark' extraClasses={['py2']} units="Units" />
@@ -144,7 +145,7 @@ export default React.createClass({
               <Checkbox label="Checkbox" fieldColor='dark' disabled={true} extraClasses={['py2']}/>
               <Checkbox label="Checked read-only" fieldColor='dark' readOnly={true} checked={true} extraClasses={['py2']}/>
               <Radio name="radios2" fieldColor='dark' label="Radio" disabled={true} extraClasses={['py2']} />
-            </div>
+            </FieldSet>
 
             <hr />
 
